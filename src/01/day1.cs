@@ -10,11 +10,11 @@ namespace AOC2022
         public static void Run()
         {
             IEnumerable<string> input = File.ReadLines("src/01/input.txt");
-            Console.WriteLine(GetCalibrationValues(input, str => str));
-            Console.WriteLine(GetCalibrationValues(input, LettersToNumbersWithBuffer));
+            GetCalibrationValues(input, str => str); // part 1
+            GetCalibrationValues(input, LettersToNumbersWithBuffer); // part 2
         }
 
-        private static int GetCalibrationValues(IEnumerable<string> input, Func<string, string> map)
+        private static void GetCalibrationValues(IEnumerable<string> input, Func<string, string> map)
         {  
             var sum = 0;
             foreach(var str in input)
@@ -23,7 +23,7 @@ namespace AOC2022
                 var combined = numeric[0] + "" + numeric[numeric.Count() - 1];
                 sum += 10 * (int) Char.GetNumericValue(numeric[0]) + (int) Char.GetNumericValue(numeric[numeric.Count() - 1]);
             }
-            return sum;
+            Console.WriteLine(sum);
         }
 
         private static Dictionary<string, string> dict = new Dictionary<string, string>

@@ -11,10 +11,10 @@ namespace AOC2022
         public static void Run()
         {
             IEnumerable<string> input = File.ReadLines("src/04/input.txt");
-            Console.WriteLine(ProcessGames(input));
+            ProcessGames(input); // part 1
         }
 
-        private static int ProcessGames(IEnumerable<string> input)
+        private static void ProcessGames(IEnumerable<string> input)
         {
             int sum = 0;
             foreach(string gameText in input)
@@ -35,7 +35,7 @@ namespace AOC2022
                 }
                 sum += (int) Math.Pow(2, matches - 1);
             }
-            return sum;
+            Console.WriteLine(sum);
         }
 
 

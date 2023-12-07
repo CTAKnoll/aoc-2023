@@ -62,8 +62,8 @@ namespace AOC2022
         {
             IEnumerable<string> input = File.ReadLines("src/02/input.txt");
             List<Game> games = ProcessGames(input);
-            Console.WriteLine(IterateGames(games, Part1Func));
-            Console.WriteLine(IterateGames(games, Part2Func));
+            IterateGames(games, Part1Func); // part 1
+            IterateGames(games, Part2Func); // part 2
         }
 
         private static List<Game> ProcessGames(IEnumerable<string> input)
@@ -89,14 +89,14 @@ namespace AOC2022
             return games;
         }
 
-        private static int IterateGames(List<Game> games, PartFunc func)
+        private static void IterateGames(List<Game> games, PartFunc func)
         {
             int sum = 0;
             foreach(Game game in games)
             {
                 sum += func(game);
             }
-            return sum;
+            Console.WriteLine(sum);
         }
 
         private delegate int PartFunc(Game g);
