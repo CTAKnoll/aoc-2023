@@ -12,14 +12,16 @@ namespace AOC2022
         {
             public long Time;
             public long Distance;
+            private double Radical;
 
             public Race(long t, long d)
             {
                 Time = t;
                 Distance = d;
+                Radical = Math.Sqrt(Math.Pow(Time, 2) - 4 * Distance);
             }
 
-            public int NumAnswers => (int) Math.Floor((Time + Math.Sqrt(Math.Pow(Time, 2) - 4 * Distance))/2) - (int) Math.Ceiling((Time - Math.Sqrt(Math.Pow(Time, 2) - 4 * Distance))/2) + 1;
+            public int NumAnswers => (int) (Math.Floor((Time + Radical)/2) - Math.Ceiling((Time - Radical)/2)) + 1;
         }
         
         public static void Run()
