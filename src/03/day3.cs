@@ -48,7 +48,7 @@ namespace AOC2022
             {
                 for(int x = 0; x < matrixInput[0].Count(); x++)
                 {
-                    if(maxtrixInput[y][x] == '.' || Char.IsDigit(maxtrixInput[y][x]))
+                    if(matrixInput[y][x] == '.' || Char.IsDigit(matrixInput[y][x]))
                         continue;
                     symbolIndices.Add(new Point(x, y));
                 }
@@ -74,13 +74,13 @@ namespace AOC2022
 
         private static int GetFullNumberAtPoint(Point p, char[][] input, List<Point> visited)
         {
-            string num = input[p.y][p.x];
+            string num = "" + input[p.y][p.x];
             
             //left side
-            while()
+            while(false);
 
             //right side
-            while()
+            while(false);
 
             return int.Parse(num);
         }
