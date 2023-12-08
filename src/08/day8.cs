@@ -72,6 +72,7 @@ namespace AOC2022
                 Cache.Add(kvp.Key, kvp.Value.PrimeCache(directions));
             }
 
+            Part1(directions);
             Part2(directions);
         }
 
