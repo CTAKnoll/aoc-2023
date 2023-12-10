@@ -72,11 +72,11 @@ namespace AOC2022
                 Cache.Add(kvp.Key, kvp.Value.PrimeCache(directions));
             }
 
-            Part1(directions);
+            Part1();
             Part2(directions);
         }
 
-        public void Part1()
+        public static void Part1()
         {
             int totalMoves = 0;
             string current = Day8.START;
